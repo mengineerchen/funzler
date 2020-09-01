@@ -1,7 +1,7 @@
 #!usr/bin/python3
 """
 This script starts functional deficiency diagnosis tool.
-It is configured in ./config/funzler.yaml
+Prerequisite: configuration for the knowledge base is available in config/funzler.yaml
 """
 
 import numpy as np
@@ -13,12 +13,13 @@ from src.helpers import advise_boucmeas, visualize
 
 def load_input_data():
     """
-    Load the following data based on configuration (./config/funzler.yaml)
-    - causal relation matrix (aka. csa)
+    Load the following data based on configuration (./config/funzler.yaml):
+    - causal relation matrix (aka. "csa" variable here)
     - event description
     - boundary description
     - observation of events
     - measurement of boundaries
+    :return df: loaded dataframe containing all needed input data
     """
     # Load configuration
     with open('./config/funzler.yaml') as config_file:
@@ -42,7 +43,7 @@ def load_input_data():
     n_ev = df["trigger-event"].count()
     df["observation"] = None
     if input_dict["obs_mode"] == "manual":
-        print("event: " + df["trigger-event"][0:n_ev].values)
+        print("event: " + df["trigger-event"].iloc[0:n_ev].values)
         obs_user = np.fromstring(
             input("Enter observation of events:"), dtype=int, sep=' ')[np.newaxis, :]
         df["observation"].iloc[0:n_ev] = obs_user[0]
@@ -56,10 +57,11 @@ def load_input_data():
 
 
 def explanability_check(output_df, threshold):
-    """ check explainability and define label
-    :param output_df:
-    :param threshold:
-    :return label:
+    """
+    Check explainability and define label.
+    :param output_df: output dataframe containing all indices computed by the inference algorithm
+    :param threshold: threshold value for the plausiblity index
+    :return label: label which classifies the input data into different classes
     """
     plausibility_max = output_df.plausibility.max(axis=0)
     plausibility_2combi_max = output_df.plausibility_2combi.max(axis=0) if \
@@ -77,7 +79,7 @@ def explanability_check(output_df, threshold):
 
 
 def run(input_df):
-    """wrapper for run"""
+    """run the evaluation."""
     # Create and run inference session
     funzler_inference = FunzlerInference(input_df)
     funzler_inference.run()

@@ -1,5 +1,5 @@
 csa:
-    kb_path: /home/meng/Workspace/funzler_py/csa/CSA_Example.xlsx
+    kb_path: /home/meng/Workspace/funzler_py/csa/CSA_Example.xlsx # custom path
     kb_sheet: KB (preprocessing)
     csa_range: # C4:L600
         columns: C:L # columns where data are
@@ -22,7 +22,3 @@ params:
     thres_showhypo: 0.7999999
     thres_find_double_bouc: 0.7999999
     thres_boucmeas_advice: 0.7999999
-
-# only for development, not transfered kbinit.m codes are
-# line 20 - line 24
-# line 26 - line 35

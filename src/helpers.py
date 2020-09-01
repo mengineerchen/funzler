@@ -1,12 +1,13 @@
 #!usr/bin/Python3
 """
-Some helpers for functional deficiency diagnosis
+Some helper functions for functional deficiency diagnosis.
 """
 import numpy as np
 
 
 def convert_obs_user_to_obs(obs_user):
     """
+    Converter of the user input observation to the observation vector required by the inference algorithm.
     :param obs_user: valued by {"certainly present": 1, "unkonwn": 0, "certainly absent": -1}
     :return obs: valued by {"certainly present": [1, 0], "unkonwn": [0, 0], "certainly absent": [0, 1]}
     """
@@ -20,6 +21,7 @@ def convert_obs_user_to_obs(obs_user):
 
 def transpose_obs(obs):
     """
+    Function for manupulating observation vector, which is used for computing consistency index.
     :param obs: observation array with the shape (1, n_ev*2)
     :returen obsT: "plus" and "minus" columns in obs matrix are exchanged
     """
@@ -33,6 +35,8 @@ def transpose_obs(obs):
 
 def prepare_2combi(csa_int):
     """
+    Generate a relation matrix for double boundary combinations from the single boundary relation matrix.
+    This is preparation for double boundary inference.
     :param csa_int: adapted causal relation matrix (with intensity matrix)
     :return csa_2combi: causal relation matrix for all boundary combinations
     :return bouc_2combi: mapping between bouc combination id (in csa_2combi) and bouc id (in csa)
@@ -61,7 +65,7 @@ def prepare_2combi(csa_int):
 
 def advise_boucmeas(input_df, output_df):
     """
-    analyze two dataframes and add impact of boundary measurement into output_df
+    Analyze two dataframes and add impact of boundary measurement into output_df
     :param input_df: input data for inference
     :param output_df: output data from inference
     """
@@ -97,7 +101,7 @@ def advise_boucmeas(input_df, output_df):
 
 
 def visualize(input_df, output_df):
-    """ print some info to terminal / user"""
+    """ print some info to terminal for user inspection."""
 
     label = output_df.label[0]
 
