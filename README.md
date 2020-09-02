@@ -7,7 +7,7 @@ Funzler is a prototype tool for functional deficiency diagnosis. This is generat
 
 ## Usage
 1. Configure the knowledge base (from CSA) in [funzler.yaml](./config/funzler.yaml).
-    - As an example of the CSA, [CSA_Example.xlsx](./csa/CSA_EXample.xlsx) is provided. The CSA results have been generated during Experiment 2 of the dissertation.
+    - As an example of the CSA, [CSA_Example.xlsx](./csa/CSA_Example.xlsx) is provided. The CSA results have been generated during Experiment 2 of the dissertation.
 1. Start and run a funzler session (a diagnosis job) by: `python3 funzler_start.py`
     - The script will inquire user for the observation of trigger-events. For each trigger-event, a value from {1, -1, 0} should be given, respectively representing {"present", "absent", "unknown"};
     - For example, for a 5-events-observation, an user input 1 1 1 1 -1 means the 5th trigger-event is absent and others are present.
