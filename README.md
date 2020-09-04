@@ -1,4 +1,4 @@
-# Funzler: a Functional Diagnosis Tool
+# Funzler: a Functional Deficiency Diagnosis Tool
 Funzler is a prototype tool for functional deficiency diagnosis. This is generated during the PhD work of the author. The full exposition of the diagnosis concept is available in the dissertation (which is currently in publication process).
 
 ## Dependencies
