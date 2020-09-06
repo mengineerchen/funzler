@@ -31,7 +31,7 @@ def update():
     # Load input and output dataframes from the last run
     input_df = pd.read_csv('_tmp_input.csv').drop(columns=['Unnamed: 0'])
     # Convert input configs into a dict
-    param_dict = yaml.load(input_df["configs"][2])
+    param_dict = yaml.safe_load(input_df["configs"][2])
     input_df["configs"][2] = param_dict
 
     # Prompt user updates for measurement and re-run

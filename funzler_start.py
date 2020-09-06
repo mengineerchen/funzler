@@ -23,14 +23,14 @@ def load_input_data():
     """
     # Load configuration
     with open('./config/funzler.yaml') as config_file:
-        config_dict = yaml.load(config_file)
+        config_dict = yaml.safe_load(config_file)
     csa_dict = config_dict["csa"]
     input_dict = config_dict["input"]
     params_dict = config_dict["params"]
     # Create dataframe from config
     df = pd.read_excel(csa_dict["kb_path"],
                        sheet_name=csa_dict["kb_sheet"],
-                       skip_rows=csa_dict["skip_rows"],
+                       skiprows=csa_dict["skip_rows"],
                        header=csa_dict["csa_range"]["header_row_index"],
                        usecols=(csa_dict["csa_range"]["columns"] + "," +
                                 csa_dict["bouc_range"]["columns"] + "," +

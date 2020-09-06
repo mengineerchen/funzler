@@ -1,15 +1,15 @@
 csa:
-    kb_path: /home/meng/Workspace/funzler_py/csa/CSA_Example.xlsx # custom path
+    kb_path: /home/mengineer/workspace/funzler/csa/CSA_Example.xlsx # custom path
     kb_sheet: KB (preprocessing)
     csa_range: # C4:L600
         columns: C:L # columns where data are
-        header_row_index: 2 # row of headers, 0-indexed
+        header_row_index: 0 # row index of headers, in relation to "skip_rows"
     ev_range: # U4:U30
         columns: U
-        header_row_index: 2
+        header_row_index: 0
     bouc_range: # T4:T600
         columns: T
-        header_row_index: 2
+        header_row_index: 0
     skip_rows: [0, 1] # discarded rows
 input:
     obs_mode: manual # manual / automated
