@@ -2,7 +2,7 @@
 Funzler is a prototype tool for functional deficiency diagnosis. This is generated during the PhD work of the author.
 
 ## Dependencies
-1. Required python libraries include numpy, pandas 0.24.0, pyyaml, xlrd >= 1.0.0.
+1. Required python libraries include numpy, pandas, pyyaml.
 1. Knowledge base should be available in the Causal Scenario Analysis (CSA). For the execution of a CSA, a [template](./csa/CSA_template_v1.1.xlsm) is provided. More detailed methodological aspects can be found in the dissertation.
 
 ## Usage in Terminal
@@ -23,6 +23,7 @@ Funzler is a prototype tool for functional deficiency diagnosis. This is generat
     ```
 
 ## Usage in Jupyter Notebook
+Configure the knowledge base in [funzler.yaml](./config/funzler.yaml) and run in terminal:
 ```
 jupyter notebook funzler.ipynb
 ```
