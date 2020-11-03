@@ -4,8 +4,11 @@ This script starts functional deficiency diagnosis tool.
 Prerequisite: configuration for the knowledge base is available in config/funzler.yaml
 """
 
+import warnings
 import numpy as np
 import pandas as pd
+from pandas.core.common import SettingWithCopyWarning
+warnings.simplefilter(action="ignore", category=SettingWithCopyWarning)
 import yaml
 from src.funzler_inference import FunzlerInference
 from src.helpers import advise_boucmeas, visualize

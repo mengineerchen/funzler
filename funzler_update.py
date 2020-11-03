@@ -4,8 +4,11 @@ This script prompts measurement update and reruns the inference which has alread
 Hence, prerequisite is that a run is already started and a _tmp_output.csv already generated in this folder.
 """
 
+import warnings
 import numpy as np
 import pandas as pd
+from pandas.core.common import SettingWithCopyWarning
+warnings.simplefilter(action="ignore", category=SettingWithCopyWarning)
 import yaml
 from funzler_start import explanability_check, run
 
