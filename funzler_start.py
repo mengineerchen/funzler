@@ -46,7 +46,8 @@ def load_input_data():
     n_ev = df["trigger-event"].count()
     df["observation"] = None
     if input_dict["obs_mode"] == "manual":
-        print("event: " + df["trigger-event"].iloc[0:n_ev].values)
+        print("Event: " + df["trigger-event"].iloc[0:n_ev].values)
+        print("Encoding: 1=present, 0=unknown, -1=absent")
         obs_user = np.fromstring(
             input("Enter observation of events:"), dtype=int, sep=' ')[np.newaxis, :]
         df["observation"].iloc[0:n_ev] = obs_user[0]
