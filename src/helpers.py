@@ -136,6 +136,6 @@ def visualize(input_df, output_df):
         for i in range(n_advisemeas):
             if meas_suggestion_data[i, 1] == 0:
                 break
-            print(bouc_description[int(meas_suggestion_data[i, 0])]+" (id %d)"
-                  % int(meas_suggestion_data[i, 0]))
+            print("id {}, worthiness {}: ".format(int(meas_suggestion_data[i, 0]), round(meas_suggestion_data[i, 1],2)) \
+                + bouc_description[int(meas_suggestion_data[i, 0])])
     print("******************End*****************")
