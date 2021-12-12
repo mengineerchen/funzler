@@ -1,5 +1,5 @@
 # Funzler: a Functional Deficiency Diagnosis Tool
-Funzler is a prototype tool for functional deficiency diagnosis. This is generated during the PhD work of the author.
+Funzler is a prototype tool for functional deficiency diagnosis. This is generated during the [PhD work](https://oparu.uni-ulm.de/xmlui/handle/123456789/39353) of the author.
 
 ## Dependencies
 1. Required python libraries include numpy, pandas, pyyaml.
